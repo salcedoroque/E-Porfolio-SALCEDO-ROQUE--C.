@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roque Salcedo | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav>
+<ul>
+<li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+<li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+<li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+<li><a href="#works"><i class="fas fa-briefcase"></i> Projects</a></li>
+<li><a href="#contacts"><i class="fas fa-envelope"></i> Contact</a></li>
+</ul>
+</nav>
+
+<section id="home" class="show">
+<div class="hero">
+<img src="salcedo image/Profile.image.jpg" alt="Roque Salcedo" class="profile-image">
+<div class="hero-text">
+<h1>Roque C. Salcedo</h1>
+<p>Passionate about creating innovative web solutions</p>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<h2>About Me</h2>
+<div class="about-content">
+<p>I am passionate about technology and continuous learning. I enjoy building websites, solving complex problems, and improving my programming skills daily.</p>
+<p>My goal is to become a professional IT developer and contribute to innovative projects that make people's lives easier through cutting-edge technology.</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+<h2>Skills</h2>
+<div class="skills-container">
+<div class="skill-card">
+<i class="fab fa-html5 skill-icon"></i>
+<h3>HTML</h3>
+<div class="skill-bar">
+<span class="skill-percent html-percent">90%</span>
+<div class="skill-level html"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<i class="fab fa-css3-alt skill-icon"></i>
+<h3>CSS</h3>
+<div class="skill-bar">
+<span class="skill-percent css-percent">85%</span>
+<div class="skill-level css"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<i class="fab fa-js-square skill-icon"></i>
+<h3>JavaScript</h3>
+<div class="skill-bar">
+<span class="skill-percent js-percent">70%</span>
+<div class="skill-level js"></div>
+</div>
+</div>
+
+<div class="skill-card">
+<i class="fab fa-python skill-icon"></i>
+<h3>Python</h3>
+<div class="skill-bar">
+<span class="skill-percent python-percent">75%</span>
+<div class="skill-level python"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="works">
+<div class="container">
+<h2>Projects</h2>
+<div class="projects-container">
+<div class="project-card">
+<img src="anime image/download.jpg" alt="Anime Website">
+<div class="project-content">
+<h3>Anime Website</h3>
+<p>Modern responsive anime streaming platform with advanced search and filtering features.</p>
+<a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+
+<div class="project-card">
+<img src="lambo image/download (1).jpg" alt="Car Showcase">
+<div class="project-content">
+<h3>Car Showcase</h3>
+<p>Luxury car showcase website featuring Lamborghini with smooth animations and 3D effects.</p>
+<a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+
+<div class="project-card">
+<img src="nissan image/download.jpg" alt="Nissan Project">
+<div class="project-content">
+<h3>Nissan Project</h3>
+<p>Official Nissan dealer website with inventory management and booking system.</p>
+<a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contacts">
+<div class="container">
+<h2>Contact Me</h2>
+<div class="contact-content">
+<div class="contact-icons">
+<a href="gmail:salcedoroque17@gmail.com" class="contact-item">
+<i class="fas fa-envelope"></i>
+
+</a>
+<a href="https://facebook.com/" target="_blank" class="contact-item">
+<i class="fab fa-facebook"></i>
+
+</a>
+
+</section>
+
+<footer>
+<div class="container">
+<p>© 2026 <span class="highlight">Roque C. Salcedo</span> | All Rights Reserved</p>
+</div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+    
+    // Intersection Observer for section animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(section => observer.observe(section));
+});
+</script>
+
+
+</body>
+</html>
